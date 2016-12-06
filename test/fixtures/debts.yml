@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  user_id: 1
+  limit: 1.5
+  outstanding_amount: 1.5
+  maturity_date: 2016-12-06 22:12:40
+  monthly_payment_amount: 1.5
+  category: 1
+  user: one
+
+two:
+  description: MyText
+  user_id: 1
+  limit: 1.5
+  outstanding_amount: 1.5
+  maturity_date: 2016-12-06 22:12:40
+  monthly_payment_amount: 1.5
+  category: 1
+  user: two

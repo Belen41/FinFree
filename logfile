@@ -4,3 +4,76 @@ LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
 LOG:  using stale statistics instead of current ones because stats collector is not responding
 LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+ERROR:  relation "expense" does not exist
+STATEMENT:  ALTER TABLE "expense" RENAME COLUMN "category_id" TO "category"
+ERROR:  relation "expenses" already exists
+STATEMENT:  CREATE TABLE "expenses" ("id" serial primary key, "description" text, "amount" float, "period" integer, "paid_at" timestamp, "category" integer, "classification" integer, "account_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3ee69df61"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	)
+ERROR:  relation "expenses" already exists
+STATEMENT:  CREATE TABLE "expenses" ("id" serial primary key, "description" text, "amount" float, "period" integer, "paid_at" timestamp, "category" integer, "classification" integer, "account_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3ee69df61"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	)
+ERROR:  relation "expenses" already exists
+STATEMENT:  CREATE TABLE "expenses" ("id" serial primary key, "description" text, "amount" float, "period" integer, "paid_at" timestamp, "category" integer, "account_id" integer, "classification" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3ee69df61"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	)
+ERROR:  column "deposit_id" of relation "accounts" already exists
+STATEMENT:  ALTER TABLE "accounts" ADD "deposit_id" integer
+ERROR:  column "deposit_id" of relation "accounts" already exists
+STATEMENT:  ALTER TABLE "accounts" ADD "deposit_id" integer
+ERROR:  relation "accounts" already exists
+STATEMENT:  CREATE TABLE "accounts" ("id" serial primary key, "name" character varying, "user_id" integer, "expense_id" integer, "deposit_id" integer, "outstanding_balance" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	, CONSTRAINT "fk_rails_b66414c438"
+	FOREIGN KEY ("deposit_id")
+	  REFERENCES "deposits" ("id")
+	, CONSTRAINT "fk_rails_35466dab4f"
+	FOREIGN KEY ("expense_id")
+	  REFERENCES "expenses" ("id")
+	)
+ERROR:  syntax error at or near "drop" at character 20
+STATEMENT:  drop table account
+	drop table expense
+	drop table expenses
+	drop table accounts
+	exit
+	drop table accounts;
+ERROR:  database "FinFree_development" is being accessed by other users
+DETAIL:  There are 5 other sessions using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "FinFree_development"
+ERROR:  database "FinFree" does not exist
+STATEMENT:  DROP DATABASE "FinFree";
+ERROR:  database "FinFree_development" is being accessed by other users
+DETAIL:  There are 5 other sessions using the database.
+STATEMENT:  DROP DATABASE "FinFree_development";
+ERROR:  relation "accounts" already exists
+STATEMENT:  CREATE TABLE "accounts" ("id" serial primary key, "name" character varying, "user_id" integer, "expense_id" integer, "deposit_id" integer, "outstanding_balance" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	, CONSTRAINT "fk_rails_b66414c438"
+	FOREIGN KEY ("deposit_id")
+	  REFERENCES "deposits" ("id")
+	, CONSTRAINT "fk_rails_35466dab4f"
+	FOREIGN KEY ("expense_id")
+	  REFERENCES "expenses" ("id")
+	)
+FATAL:  database "FinFree_development" does not exist
+ERROR:  database "FinFree_test" already exists
+STATEMENT:  CREATE DATABASE "FinFree_test" ENCODING = 'utf8'
+ERROR:  relation "accounts" already exists
+STATEMENT:  CREATE TABLE "accounts" ("id" serial primary key, "name" character varying, "user_id" integer, "expense_id" integer, "deposit_id" integer, "outstanding_balance" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	, CONSTRAINT "fk_rails_b66414c438"
+	FOREIGN KEY ("deposit_id")
+	  REFERENCES "deposits" ("id")
+	, CONSTRAINT "fk_rails_35466dab4f"
+	FOREIGN KEY ("expense_id")
+	  REFERENCES "expenses" ("id")
+	)
