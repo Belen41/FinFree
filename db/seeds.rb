@@ -9,7 +9,8 @@
 paul, alia, leto = User.create([
   {name: 'Paul Atreides',  email: 'paul@arrakis.com', password: 'ironhack24', password_confirmation: 'ironhack24'},
   {name: 'Alia Atreides',  email: 'alia@arrakis.com',  password: 'ironhack21', password_confirmation: 'ironhack21'},
-  {name: 'Leto Atreides', email: 'leto@arrakis.com',  password: 'ironhack15', password_confirmation: 'ironhack15'}
+  {name: 'Leto Atreides', email: 'leto@arrakis.com',  password: 'ironhack15', password_confirmation: 'ironhack15'},
+  {name: 'Belen Linacero', email: 'belen@belenlinacero.com',password: 'linacero41',password_confirmation: 'linacero41'}
 ])
 
 # deposits = Deposit.create([
@@ -20,3 +21,8 @@ paul, alia, leto = User.create([
 	#{description: "ingresos afiliados", amount:100, period: "puntual",type:"pasivo", subtype:"programas de afiliados", deposited_at: "20/10/2016",user_id:1},
 	#{description: "salario", amount:1500, period: "mensual", type:"activo",subtype:"trabajo habitual",deposited_at:"15/10/2016", user_id: 1}
 #])
+
+accounts 	= Account.create([])
+debts		= Debt.create([])
+expenses	= Expense.create([])
+deposits	= Deposit.create([])

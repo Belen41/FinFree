@@ -1,6 +1,7 @@
 class Expense < ApplicationRecord
   belongs_to :user
   has_one :account
+  
   enum category:[ 
   					:alimentacion, :alquiler, :comunidad, 
             		:agua, :gas, :electricidad, :gasolina,
@@ -10,10 +11,15 @@ class Expense < ApplicationRecord
             		:gimnasio, :otros, :ropa, :deporte,
             		:transporte, :restauracion
           		]
+  
   enum period: [ 
   					:anual, :bimensual, 
           			:mensual, :semestral, :trimestral
           		]
 
+  
   enum classification: [:evitable, :inevitable, :mejorable]
+
+  validates :amount, :period, :paid_at, :category , 
+            :classification , :account_id, presence:true
 end

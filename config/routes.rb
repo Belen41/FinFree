@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :users do
   	resources :deposits
   	resources :expenses
+  	resources :debts
+  	resources :accounts
   end
   get '/', to: 'sites#show'
   get 'profile', to: 'users#profile'

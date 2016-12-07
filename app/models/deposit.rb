@@ -3,8 +3,12 @@ class Deposit < ApplicationRecord
   has_one :account
   has_one :deposit_type
   has_one :deposit_subtype
+  
   enum period: [ 
   					:anual, :bimensual, :puntual,
           			:mensual, :semestral, :trimestral
           		]
+  
+  validates :amount, :deposited_at , :period ,
+  			:deposit_type, :deposit_subtype, presence:true
 end
