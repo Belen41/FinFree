@@ -104,3 +104,34 @@ STATEMENT:  ALTER TABLE "accounts" ADD "debt_id" integer
 LOG:  using stale statistics instead of current ones because stats collector is not responding
 ERROR:  column "debt_id" of relation "accounts" already exists
 STATEMENT:  ALTER TABLE "accounts" ADD "debt_id" integer
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+ERROR:  relation "accounts" already exists
+STATEMENT:  CREATE TABLE "accounts" ("id" serial primary key, "name" character varying, "type" integer, "user_id" integer, "initial_outstanding_balance" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	)
+ERROR:  relation "accounts" already exists
+STATEMENT:  CREATE TABLE "accounts" ("id" serial primary key, "name" character varying, "type" integer, "user_id" integer, "initial_outstanding_balance" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	)
+ERROR:  relation "accounts" already exists
+STATEMENT:  CREATE TABLE "accounts" ("id" serial primary key, "name" character varying, "type" integer, "user_id" integer, "initial_outstanding_balance" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	)
+ERROR:  database "FinFree_development" is being accessed by other users
+DETAIL:  There are 5 other sessions using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "FinFree_development"
+ERROR:  database "FinFree_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "FinFree_development"
+FATAL:  database "FinFree_development" does not exist
+FATAL:  database "FinFree_development" does not exist
+ERROR:  relation "deposit_type" does not exist
+STATEMENT:  ALTER TABLE "deposit_type" ALTER COLUMN "name" TYPE integer
+ERROR:  column "name" cannot be cast automatically to type integer
+HINT:  You might need to specify "USING name::integer".
+STATEMENT:  ALTER TABLE "deposit_types" ALTER COLUMN "name" TYPE integer

@@ -3,7 +3,7 @@ class Expense < ApplicationRecord
   has_one :account
   
   enum category:[ 
-  					:alimentacion, :alquiler, :comunidad, 
+  					    :alimentacion, :alquiler, :comunidad, 
             		:agua, :gas, :electricidad, :gasolina,
             		:movil_adsl, :ibi, :seguro_hogar,
             		:seguro_coche_moto, :ocio,
@@ -13,13 +13,14 @@ class Expense < ApplicationRecord
           		]
   
   enum period: [ 
-  					:anual, :bimensual, 
+  					    :puntual, :anual, :bimensual, 
           			:mensual, :semestral, :trimestral
           		]
 
   
   enum classification: [:evitable, :inevitable, :mejorable]
 
+  validates :description, presence:true, length:{ maximum: 25 }
   validates :amount, :period, :paid_at, :category , 
             :classification , :account_id, presence:true
 end

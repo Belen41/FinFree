@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-paul, alia, leto = User.create([
-  {name: 'Paul Atreides',  email: 'paul@arrakis.com', password: 'ironhack24', password_confirmation: 'ironhack24'},
-  {name: 'Alia Atreides',  email: 'alia@arrakis.com',  password: 'ironhack21', password_confirmation: 'ironhack21'},
-  {name: 'Leto Atreides', email: 'leto@arrakis.com',  password: 'ironhack15', password_confirmation: 'ironhack15'},
-  {name: 'Belen Linacero', email: 'belen@belenlinacero.com',password: 'linacero41',password_confirmation: 'linacero41'}
+users = User.create([
+  {name: 'Paul',  email: 'paul@arrakis.com', password: 'ironhack24', password_confirmation: 'ironhack24'},
+  {name: 'Alia',  email: 'alia@arrakis.com',  password: 'ironhack21', password_confirmation: 'ironhack21'},
+  {name: 'Leto', email: 'leto@arrakis.com',  password: 'ironhack15', password_confirmation: 'ironhack15'},
+  {name: 'Belen', email: 'belen@belenlinacero.com',password: 'linacero41',password_confirmation: 'linacero41'}
 ])
 
 # deposits = Deposit.create([
@@ -22,7 +22,26 @@ paul, alia, leto = User.create([
 	#{description: "salario", amount:1500, period: "mensual", type:"activo",subtype:"trabajo habitual",deposited_at:"15/10/2016", user_id: 1}
 #])
 
-accounts 	= Account.create([])
-debts		= Debt.create([])
-expenses	= Expense.create([])
-deposits	= Deposit.create([])
+# accounts 	= Account.create([
+# 	{name: 'Sabadell', 
+
+# 		}])
+# belen.debts.create({})
+# belen.expenses.create({})
+# belen.deposits.create({})
+# belen.deposit_types.
+
+# debts				= Debt.create([])
+# expenses			= Expense.create([])
+# deposits			= Deposit.create([])
+# deposit1=Deposit.create({})
+# typeActive=deposit1.types.create({name:'activo'})
+
+# deposit_types 		= DepositType.create([
+# 	{name:'activo',deposit_id:1 }
+# 	{name:'activo'
+# 		}])
+# deposit_subtypes 	= DepositSubtype.create([
+# 	{name:'trabajo habitual',},
+# 	{name:'trabajo puntual',},
+# 	]) 
