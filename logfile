@@ -77,3 +77,28 @@ STATEMENT:  CREATE TABLE "accounts" ("id" serial primary key, "name" character v
 	FOREIGN KEY ("expense_id")
 	  REFERENCES "expenses" ("id")
 	)
+ERROR:  relation "deposits" does not exist
+STATEMENT:  CREATE TABLE "accounts" ("id" serial primary key, "name" character varying, "user_id" integer, "expense_id" integer, "deposit_id" integer, "outstanding_balance" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	, CONSTRAINT "fk_rails_b66414c438"
+	FOREIGN KEY ("deposit_id")
+	  REFERENCES "deposits" ("id")
+	, CONSTRAINT "fk_rails_35466dab4f"
+	FOREIGN KEY ("expense_id")
+	  REFERENCES "expenses" ("id")
+	)
+ERROR:  relation "expenses" does not exist
+STATEMENT:  CREATE TABLE "accounts" ("id" serial primary key, "name" character varying, "user_id" integer, "expense_id" integer, "deposit_id" integer, "outstanding_balance" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	, CONSTRAINT "fk_rails_b66414c438"
+	FOREIGN KEY ("deposit_id")
+	  REFERENCES "deposits" ("id")
+	, CONSTRAINT "fk_rails_35466dab4f"
+	FOREIGN KEY ("expense_id")
+	  REFERENCES "expenses" ("id")
+	)
+ERROR:  column "debt_id" of relation "accounts" already exists
+STATEMENT:  ALTER TABLE "accounts" ADD "debt_id" integer
+LOG:  using stale statistics instead of current ones because stats collector is not responding

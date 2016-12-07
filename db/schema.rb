@@ -10,61 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206204115) do
+ActiveRecord::Schema.define(version: 20161206213131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accounts", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.integer  "expense_id"
-    t.integer  "deposit_id"
-    t.float    "outstanding_balance"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.index ["user_id"], name: "index_accounts_on_user_id", using: :btree
-  end
-
-  create_table "deposit_subtypes", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "parent_id"
-    t.integer  "deposit_type_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["deposit_type_id"], name: "index_deposit_subtypes_on_deposit_type_id", using: :btree
-  end
-
-  create_table "deposit_types", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "deposits", force: :cascade do |t|
     t.text     "description"
     t.float    "amount"
-    t.string   "period"
-    t.string   "type"
-    t.string   "subtype"
+    t.integer  "period"
+    t.integer  "deposit_type_id"
+    t.integer  "deposit_subtype_id"
+    t.integer  "account_id"
     t.datetime "deposited_at"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.index ["user_id"], name: "index_deposits_on_user_id", using: :btree
   end
 
   create_table "expenses", force: :cascade do |t|
     t.text     "description"
     t.float    "amount"
-    t.string   "period"
+    t.integer  "period"
     t.datetime "paid_at"
-    t.integer  "category_id"
+    t.integer  "category"
     t.integer  "account_id"
-    t.integer  "classification_id"
+    t.integer  "classification"
     t.integer  "user_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["user_id"], name: "index_expenses_on_user_id", using: :btree
   end
 
@@ -95,8 +70,6 @@ ActiveRecord::Schema.define(version: 20161206204115) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
   end
 
-  add_foreign_key "accounts", "users"
-  add_foreign_key "deposit_subtypes", "deposit_types"
   add_foreign_key "deposits", "users"
   add_foreign_key "expenses", "users"
 end
