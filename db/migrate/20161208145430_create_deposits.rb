@@ -4,8 +4,8 @@ class CreateDeposits < ActiveRecord::Migration[5.0]
       t.text :description
       t.float :amount
       t.integer :period
-      t.integer :deposit_type_id
-      t.integer :deposit_subtype_id
+      t.integer :deposit_type
+      t.integer :deposit_subtype
       t.integer :account_id
       t.datetime :deposited_at
       t.integer :user_id

@@ -10,28 +10,52 @@
 <body>
 	<nav>
 		<div class="nav-wrapper">
-	    	<img class="brand-logo" src= "images/SmallLogo.png">
-	    	<ul id="nav-mobile" class="right hide-on-med-and-down">
-	        	<li><a href="sass.html">Tutorial</a></li>
-	        	<li><a href="badges.html">Blog</a></li>
-	        	<li><a href="collapsible.html">Contacta</a></li>
-	        	<% if user_signed_in? %>
-        		<li>
-	        		<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Cerrar Sesion</a>
-	        		<%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
-        		</li>
-      			<% else %>
-		        <li>
-		          <a class ="waves-effect waves-light btn" type= "submit" <%= link_to 'Registrate Gratis', new_user_registration_path %></a>  
-		          <a class= "waves-effect waves-light btn" type="submit" <%= link_to 'Inicia Sesion', new_user_session_path %></a>
-		        </li>
-      			<% end %>
-	      	</ul>      
-	    </div>
+		    <img class="brand-logo" src= "assets/SmallLogo.png">
+				<a href="#" data-activates="mobile-demo" class="button-collapse">
+		 			<i class="material-icons">menu</i>
+	 			</a>
+		    <ul class="right hide-on-med-and-down">
+		    	<li><a href="#">Tutorial</a></li>
+		    	<li><a href="#">Blog</a></li>
+		    	<li><a href="#">Contacta</a></li>
+		    	<% if user_signed_in? %>
+	        <li>
+		        <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Cerrar Sesion</a>
+		        <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
+	        </li>
+	      		<% else %>
+			    <li>
+			      <a class ="waves-effect waves-light btn" type= "submit" <%= link_to 'Registrate Gratis', new_user_registration_path %>
+			      </a>
+			      <a class= "waves-effect waves-light btn" type="submit" <%= link_to 'Inicia Sesion', new_user_session_path %></a>
+			    </li>
+	      		<% end %>
+		    </ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li><a href="#">Tutorial</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Contacta</a></li>
+						<% if user_signed_in? %>
+					<li>
+						<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Cerrar Sesion</a>
+						<%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
+					</li>
+						<% else %>
+					<li>
+						<a class ="waves-effect waves-light btn" type= "submit" <%= link_to 'Registrate Gratis', new_user_registration_path %>
+						</a>
+						<a class= "waves-effect waves-light btn" type="submit" <%= link_to 'Inicia Sesion', new_user_session_path %></a>
+					</li>
+						<% end %>
+				</ul>
+		</div>
 	</nav>
-
 	<div class="container">
-		<img class="responsive-img" src="images/roadtofreedom-iskqanda.jpg">
+		<div class="slidebox js-slider">
+			<ul class="slides">
+				<li>
+					<img class="responsive-img" src="assets/roadtofreedom-iskqanda.jpg">
+					<div class="caption center-align">
 	</div>
 
 </body>

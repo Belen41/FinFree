@@ -13,35 +13,22 @@ users = User.create([
   {name: 'Belen', email: 'belen@belenlinacero.com',password: 'linacero41',password_confirmation: 'linacero41'}
 ])
 
-# deposits = Deposit.create([
-	#{description: "sueldo", amount: 500, period: "mensual", type: "activo", subtype: "trabajo habitual", deposited_at: "15/08/2016", user_id: 4},
-	#{description: "comisiones distribucion", amount: 100, period: "mensual", type: "pasivo", subtype:"comisiones", deposited_at: "14/10/2016", user_id:4},
-	#{description: "sueldo", amount: 2000, period:"mensual", type: "activo", subtype: "trabajo habitual",deposited_at: "15/11/2016",user_id: 2 },
-	#{description: "renta alquiler", amount:500, period: "mensual", type:"pasivo", subtype:"rentas inmuebles", deposited_at: "10/11/2016", user_id:2},
-	#{description: "ingresos afiliados", amount:100, period: "puntual",type:"pasivo", subtype:"programas de afiliados", deposited_at: "20/10/2016",user_id:1},
-	#{description: "salario", amount:1500, period: "mensual", type:"activo",subtype:"trabajo habitual",deposited_at:"15/10/2016", user_id: 1}
-#])
+accounts=Account.create([
+  {name:'sabadell',account_type:0,initial_outstanding_balance:2000,user_id:4},
+  {name:'ing',account_type:1,initial_outstanding_balance:6000,user_id:4},
+  {name:'bbva',account_type:3,initial_outstanding_balance:4000,user_id:4},
+  {name:'bankinter',account_type:2,initial_outstanding_balance:1000,user_id:4}
+  ])
 
-# accounts 	= Account.create([
-# 	{name: 'Sabadell', 
+belen_debt1=User.find(4).debts.create({description:'tarjeta1',limit:1000,outstanding_amount:800,maturity_date:'2017-12-31',monthly_payment_amount:140,category:0,account_id:1})
+belen_debt1=User.find(4).debts.create({description:'tarjeta2',limit:2000,outstanding_amount:500,maturity_date:'2017-12-31',monthly_payment_amount:100,category:0,account_id:1})
+belen_deposit1=User.find(4).deposits.create({description:'salario',amount:1500,period:4,deposit_type:0,deposit_subtype:0,account_id:4,deposited_at:'2016-11-25'})
+belen_deposit2=User.find(4).deposits.create({description:'preahorro',amount:100,period:4,deposit_type:2,deposit_subtype:8,account_id:2,deposited_at:'2016-11-25'})
 
-# 		}])
-# belen.debts.create({})
-# belen.expenses.create({})
-# belen.deposits.create({})
-# belen.deposit_types.
 
-# debts				= Debt.create([])
-# expenses			= Expense.create([])
-# deposits			= Deposit.create([])
-# deposit1=Deposit.create({})
-# typeActive=deposit1.types.create({name:'activo'})
-
-# deposit_types 		= DepositType.create([
-# 	{name:'activo',deposit_id:1 }
-# 	{name:'activo'
-# 		}])
-# deposit_subtypes 	= DepositSubtype.create([
-# 	{name:'trabajo habitual',},
-# 	{name:'trabajo puntual',},
-# 	]) 
+expenses= Expense.create([
+  {description:'AhorraMas',amount:40,period:1,paid_at:'2016-11-10',category:0,account_id:1,classification:2,user_id:4},
+  {description:'Mercadona',amount:30,period:1,paid_at:'2016-11-20',category:0,account_id:1,classification:2,user_id:4},
+  {description:'Gimnasio',amount:50,period:4,paid_at:'2016-11-1',category:14,account_id:1,classification:2,user_id:4},
+  {description:'Yoga',amount:40,period:4,paid_at:'2016-11-5',category:14,account_id:1,classification:2,user_id:4}
+  ])

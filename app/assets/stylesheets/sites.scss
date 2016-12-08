@@ -7,19 +7,23 @@ nav ul a{
 	display: inline-block;
 }
 nav {
+	height:80px;
+	line-height:80px;
 	background-color:#36B5C1
 }
 
 nav .brand-logo {
 	position:relative;
-	min-height: 1px;
-	padding-right: 15px;
-	padding-left: 15px;
+	display:inline-block;
+	max-width:auto;
+	padding-right: 5px;
+	padding-left: 5px;
 	margin-bottom: 20px;
 }
 
 .btn {
 	background-color: #36B5C1;
-	border: 1px solid;
 	border-radius: 50px;
+	display: inline-block;
+	text-transform:none;
 }
