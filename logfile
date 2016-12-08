@@ -135,3 +135,18 @@ STATEMENT:  ALTER TABLE "deposit_type" ALTER COLUMN "name" TYPE integer
 ERROR:  column "name" cannot be cast automatically to type integer
 HINT:  You might need to specify "USING name::integer".
 STATEMENT:  ALTER TABLE "deposit_types" ALTER COLUMN "name" TYPE integer
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT "debts".* FROM "debts" WHERE "debts"."user_id" = $1
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding

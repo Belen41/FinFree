@@ -1,8 +1,8 @@
 class Account < ApplicationRecord
   belongs_to :user
 
-  enum type: [:corriente, :ahorro]
+  enum account_type: [:corriente, :ahorro]
 
-  validates :description, presence:true, length: { maximum: 25 }
-  validates :initial_outstanding_balance, :type, presence:true
+  validates :name, presence:true, length: { maximum: 25 }
+  validates :initial_outstanding_balance, :account_type, presence:true
 end

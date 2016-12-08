@@ -13,14 +13,14 @@ class Expense < ApplicationRecord
           		]
   
   enum period: [ 
-  					    :puntual, :anual, :bimensual, 
+  					    :puntual, :semanal, :anual, :bimensual, 
           			:mensual, :semestral, :trimestral
           		]
 
   
   enum classification: [:evitable, :inevitable, :mejorable]
 
-  validates :description, presence:true, length:{ maximum: 25 }
+  validates :description, presence:true, length: { maximum: 25 }
   validates :amount, :period, :paid_at, :category , 
             :classification , :account_id, presence:true
 end
