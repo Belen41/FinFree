@@ -26,11 +26,18 @@ gem 'jbuilder', '~> 2.5'
 gem 'chart-js-rails'
 # Simplifies using Chart.js in Rails views
 gem 'chartjs-ror'
+# Send data to js files in an easier way
+gem 'gon'
+# Animate.css
+gem "animate-rails"
+# Make controllers into step-by-step wizards
+gem 'wicked'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
- 
+
 gem 'devise'
 gem 'pry-rails'
 

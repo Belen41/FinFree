@@ -2,28 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-nav ul a{
-	padding: 0 20px;
-	display: inline-block;
-}
-nav {
+
+nav .nav-wrapper{
 	height:80px;
 	line-height:80px;
 	background-color:#36B5C1
 }
-
-nav .brand-logo {
-	position:relative;
-	display:inline-block;
-	max-width:auto;
-	padding-right: 5px;
-	padding-left: 5px;
-	margin-bottom: 20px;
+nav ul a{
+	padding: 0 20px;
+	display: inline-block;
 }
-
-.btn {
+nav ul a.btn {
 	background-color: #36B5C1;
 	border-radius: 50px;
 	display: inline-block;
 	text-transform:none;
+}
+nav .brand-logo {
+	position:relative;
+	display:inline-block;
+	max-width: 90%;
+	max-height: 90%;
+	padding-right: 20px;
+	padding-left: 20px;
 }
