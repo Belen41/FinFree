@@ -1,0 +1,42 @@
+  <nav>
+    <div class="nav-wrapper">
+        <img class="responsive-img brand-logo" src= "/assets/SmallLogo.jpg">
+        <a href="#" data-activates="mobile-demo" class="button-collapse">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Tutorial</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacta</a></li>
+          <% if user_signed_in? %>
+          <li>
+            <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Cerrar Sesion</a>
+            <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
+          </li>
+            <% else %>
+          <li>
+            <a class ="waves-effect waves-light btn modal-trigger" href= "#modalsignup" type= "submit" <%= link_to 'Registrate Gratis', new_user_registration_path,method: 'GET' %>
+            </a>
+            <a class= "waves-effect waves-light btn modal-trigger" href= "#modalsignin" type="submit" <%= link_to 'Inicia Sesion', new_user_session_path,method: 'GET' %></a>
+          </li>
+            <% end %>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="#">Tutorial</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacta</a></li>
+            <% if user_signed_in? %>
+          <li>
+            <a class="waves-effect waves-light btn">Cerrar Sesion</a>
+            <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
+          </li>
+            <% else %>
+          <li>
+            <a class =" waves-effect waves-light btn modal-trigger" href= "#modalsignup" type= "submit" <%= link_to 'Registrate Gratis', new_user_registration_path, method: 'GET'%></a>
+            <a class= " waves-effect waves-light btn modal-trigger" href= "#modalsignin" type="submit" <%= link_to 'Inicia Sesion', new_user_session_path, method: 'GET'%></a>
+          </li>
+            <% end %>
+        </ul>
+    </div>
+  </nav>
+	<script type="text/javascript" src="/assets/sites.js"
